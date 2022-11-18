@@ -1,0 +1,17 @@
+service: apac-serverless-local-project
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+plugins:
+  - serverless-offline
+
+functions:
+  hello:
+    handler: src/node-function-1.handler
+    events:
+      - http:
+          path: /node-function-1
+          method: post
